@@ -1,8 +1,13 @@
 const express = require("express")
 const noteModel = require("./models/note.model")
 const cors = require("cors")
+const path = require("path")
 const app = express()
 app.use(cors())
+app.use(express.static("./public")) //out index.html file send api request for css and js file ..so if 
+// they exists in public folder then okay and res is send,but if not then control goes to (app.use('*name',(req,res)=>{ 
+//     res.sendFile(path.join(__dirname,"..","/public/index.html"))
+// }))
 app.use(express.json())
 app.post("/api/notes",async(req,res)=>{
     const {title,description} = req.body
@@ -38,5 +43,8 @@ app.patch("/api/notes/:id",async(req,res)=>{
     res.status(200).json({
         message :"Note updated Successfully"
     })
+})
+app.use('*name',(req,res)=>{ // use to return the html file if any other api request occur which in not in server.
+    res.sendFile(path.join(__dirname,"..","/public/index.html"))
 })
 module.exports = app

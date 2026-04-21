@@ -19,12 +19,55 @@ html, body {
     position: absolute;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .note{
-   height: 13%;
    width: 13%;
    background-color: rgb(0, 166, 255);
    padding: 5px;
    border-radius: 10px;
    text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+}
+.notes-create-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100px;
+  width: 100%;
+}
+.notes-create-form input{
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 3px;
+}
+.notes-create-form button{
+  width: 130px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.eachdel{
+    width: 80px;
+  height: 27px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgb(91, 218, 232);
+}
+.eachup{
+    width: 80px;
+  height: 27px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgb(91, 218, 232);
+}
+.bothbutton{
+  display: flex;
+  gap: 5px;
+  
 }
