@@ -4,7 +4,7 @@ const cors = require("cors")
 const path = require("path")
 const app = express()
 app.use(cors())
-app.use(express.static("./public")) //out index.html file send api request for css and js file ..so if 
+app.use(express.static("./public")) //All the content in the ublic folder is publically available for user to acces..and our index.html file send api request for css and js file ..so if 
 // they exists in public folder then okay and res is send,but if not then control goes to (app.use('*name',(req,res)=>{ 
 //     res.sendFile(path.join(__dirname,"..","/public/index.html"))
 // }))

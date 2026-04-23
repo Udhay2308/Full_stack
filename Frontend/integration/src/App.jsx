@@ -6,7 +6,7 @@ const [notes, setnotes] = useState([])
 console.log("hell")
 
 function fetchnotes(){
-  axios.get("http://localhost:3000/api/notes")
+  axios.get("https://full-stack-2-dwm9.onrender.com/api/notes")
       .then((res) => {
        setnotes(res.data.notes)
       })
@@ -19,7 +19,7 @@ function fetchnotes(){
     e.preventDefault()
     const {title , description} = e.target.elements
 
-    axios.post("http://localhost:3000/api/notes",{
+    axios.post("https://full-stack-2-dwm9.onrender.com/api/notes",{
       title:title.value,
       description:description.value
     })
@@ -31,7 +31,7 @@ function fetchnotes(){
   }
   function handleDelete(noteid){
     console.log(noteid)
-     axios.delete("http://localhost:3000/api/notes/"+noteid)
+     axios.delete("https://full-stack-2-dwm9.onrender.com/api/notes/"+noteid)
     .then(res=>{
       console.log(res.data)
       fetchnotes()
@@ -42,7 +42,7 @@ function fetchnotes(){
 
   if (!newDescription) return;
 
-  axios.patch("http://localhost:3000/api/notes/" + noteid, {
+  axios.patch("https://full-stack-2-dwm9.onrender.com/api/notes/" + noteid, {
     description: newDescription
   })
   .then(res => {
